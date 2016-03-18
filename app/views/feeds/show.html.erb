@@ -1,0 +1,13 @@
+<h1>Welcome <%= current_user.username %>!</h1>
+
+<b>Your Feed!</b>
+<ul id="feed">
+  <% @feed_tweets.each do |tweet| %>
+    <li><%= render "tweets/tweet", tweet: tweet %></li>
+  <% end %>
+</ul>
+
+<%= render "tweets/form" %>
+
+<button class="follow-toggle" data-user-id="1" data-initial-follow-state="unfollowed"></button>
+<button class="follow-toggle" data-user-id="2" data-initial-follow-state="followed"></button>
